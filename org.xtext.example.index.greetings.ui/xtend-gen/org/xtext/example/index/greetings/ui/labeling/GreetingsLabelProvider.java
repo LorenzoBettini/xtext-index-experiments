@@ -6,6 +6,8 @@ package org.xtext.example.index.greetings.ui.labeling;
 import com.google.inject.Inject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+import org.xtext.example.index.greetings.greetings.HelloGreeting;
+import org.xtext.example.index.greetings.greetings.RefGreeting;
 
 /**
  * Provides labels for a EObjects.
@@ -17,5 +19,12 @@ public class GreetingsLabelProvider extends DefaultEObjectLabelProvider {
   @Inject
   public GreetingsLabelProvider(final AdapterFactoryLabelProvider delegate) {
     super(delegate);
+  }
+  
+  public String text(final RefGreeting ref) {
+    HelloGreeting _greeting = ref.getGreeting();
+    String _name = _greeting.getName();
+    String _plus = ("ref: " + _name);
+    return _plus;
   }
 }

@@ -4,6 +4,7 @@
 package org.xtext.example.index.greetings.ui.labeling
 
 import com.google.inject.Inject
+import org.xtext.example.index.greetings.greetings.RefGreeting
 
 /**
  * Provides labels for a EObjects.
@@ -17,13 +18,7 @@ class GreetingsLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLa
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+	def text(RefGreeting ref) {
+		'ref: ' + ref.greeting.name
+	}
 }
