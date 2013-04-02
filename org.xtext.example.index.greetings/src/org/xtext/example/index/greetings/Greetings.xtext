@@ -1,0 +1,9 @@
+grammar org.xtext.example.index.greetings.Greetings with org.eclipse.xtext.common.Terminals
+
+generate greetings "http://www.xtext.org/example/index/greetings/Greetings"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
