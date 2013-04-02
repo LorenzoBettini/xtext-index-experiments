@@ -86,6 +86,22 @@ public class GreetingsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case GreetingsPackage.HELLO_GREETING:
+      {
+        HelloGreeting helloGreeting = (HelloGreeting)theEObject;
+        T result = caseHelloGreeting(helloGreeting);
+        if (result == null) result = caseGreeting(helloGreeting);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case GreetingsPackage.REF_GREETING:
+      {
+        RefGreeting refGreeting = (RefGreeting)theEObject;
+        T result = caseRefGreeting(refGreeting);
+        if (result == null) result = caseGreeting(refGreeting);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -118,6 +134,38 @@ public class GreetingsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGreeting(Greeting object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Hello Greeting</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Hello Greeting</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHelloGreeting(HelloGreeting object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ref Greeting</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ref Greeting</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRefGreeting(RefGreeting object)
   {
     return null;
   }

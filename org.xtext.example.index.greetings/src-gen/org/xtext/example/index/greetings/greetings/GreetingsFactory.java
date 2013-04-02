@@ -41,6 +41,24 @@ public interface GreetingsFactory extends EFactory
   Greeting createGreeting();
 
   /**
+   * Returns a new object of class '<em>Hello Greeting</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hello Greeting</em>'.
+   * @generated
+   */
+  HelloGreeting createHelloGreeting();
+
+  /**
+   * Returns a new object of class '<em>Ref Greeting</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ref Greeting</em>'.
+   * @generated
+   */
+  RefGreeting createRefGreeting();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

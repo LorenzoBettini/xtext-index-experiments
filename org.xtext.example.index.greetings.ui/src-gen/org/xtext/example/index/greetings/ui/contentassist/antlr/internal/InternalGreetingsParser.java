@@ -22,12 +22,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGreetingsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'", "'ref'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
     public static final int T__12=12;
     public static final int T__11=11;
+    public static final int T__13=13;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
     public static final int RULE_WS=9;
@@ -122,7 +123,7 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11) ) {
+                if ( (LA1_0==11||LA1_0==13) ) {
                     alt1=1;
                 }
 
@@ -198,31 +199,31 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "ruleGreeting"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:97:1: ruleGreeting : ( ( rule__Greeting__Group__0 ) ) ;
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:97:1: ruleGreeting : ( ( rule__Greeting__Alternatives ) ) ;
     public final void ruleGreeting() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:101:2: ( ( ( rule__Greeting__Group__0 ) ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:102:1: ( ( rule__Greeting__Group__0 ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:101:2: ( ( ( rule__Greeting__Alternatives ) ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:102:1: ( ( rule__Greeting__Alternatives ) )
             {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:102:1: ( ( rule__Greeting__Group__0 ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:103:1: ( rule__Greeting__Group__0 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:102:1: ( ( rule__Greeting__Alternatives ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:103:1: ( rule__Greeting__Alternatives )
             {
-             before(grammarAccess.getGreetingAccess().getGroup()); 
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:104:1: ( rule__Greeting__Group__0 )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:104:2: rule__Greeting__Group__0
+             before(grammarAccess.getGreetingAccess().getAlternatives()); 
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:104:1: ( rule__Greeting__Alternatives )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:104:2: rule__Greeting__Alternatives
             {
-            pushFollow(FOLLOW_rule__Greeting__Group__0_in_ruleGreeting155);
-            rule__Greeting__Group__0();
+            pushFollow(FOLLOW_rule__Greeting__Alternatives_in_ruleGreeting155);
+            rule__Greeting__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGreetingAccess().getGroup()); 
+             after(grammarAccess.getGreetingAccess().getAlternatives()); 
 
             }
 
@@ -244,26 +245,21 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
     // $ANTLR end "ruleGreeting"
 
 
-    // $ANTLR start "rule__Greeting__Group__0"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:118:1: rule__Greeting__Group__0 : rule__Greeting__Group__0__Impl rule__Greeting__Group__1 ;
-    public final void rule__Greeting__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
+    // $ANTLR start "entryRuleHelloGreeting"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:116:1: entryRuleHelloGreeting : ruleHelloGreeting EOF ;
+    public final void entryRuleHelloGreeting() throws RecognitionException {
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:122:1: ( rule__Greeting__Group__0__Impl rule__Greeting__Group__1 )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:123:2: rule__Greeting__Group__0__Impl rule__Greeting__Group__1
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:117:1: ( ruleHelloGreeting EOF )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:118:1: ruleHelloGreeting EOF
             {
-            pushFollow(FOLLOW_rule__Greeting__Group__0__Impl_in_rule__Greeting__Group__0189);
-            rule__Greeting__Group__0__Impl();
+             before(grammarAccess.getHelloGreetingRule()); 
+            pushFollow(FOLLOW_ruleHelloGreeting_in_entryRuleHelloGreeting182);
+            ruleHelloGreeting();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Greeting__Group__1_in_rule__Greeting__Group__0192);
-            rule__Greeting__Group__1();
-
-            state._fsp--;
-
+             after(grammarAccess.getHelloGreetingRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleHelloGreeting189); 
 
             }
 
@@ -273,116 +269,38 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
             recover(input,re);
         }
         finally {
-
-            	restoreStackSize(stackSize);
-
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__0"
+    // $ANTLR end "entryRuleHelloGreeting"
 
 
-    // $ANTLR start "rule__Greeting__Group__0__Impl"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:130:1: rule__Greeting__Group__0__Impl : ( 'Hello' ) ;
-    public final void rule__Greeting__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "ruleHelloGreeting"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:125:1: ruleHelloGreeting : ( ( rule__HelloGreeting__Group__0 ) ) ;
+    public final void ruleHelloGreeting() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:134:1: ( ( 'Hello' ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:135:1: ( 'Hello' )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:129:2: ( ( ( rule__HelloGreeting__Group__0 ) ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:130:1: ( ( rule__HelloGreeting__Group__0 ) )
             {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:135:1: ( 'Hello' )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:136:1: 'Hello'
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:130:1: ( ( rule__HelloGreeting__Group__0 ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:131:1: ( rule__HelloGreeting__Group__0 )
             {
-             before(grammarAccess.getGreetingAccess().getHelloKeyword_0()); 
-            match(input,11,FOLLOW_11_in_rule__Greeting__Group__0__Impl220); 
-             after(grammarAccess.getGreetingAccess().getHelloKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Greeting__Group__0__Impl"
-
-
-    // $ANTLR start "rule__Greeting__Group__1"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:149:1: rule__Greeting__Group__1 : rule__Greeting__Group__1__Impl rule__Greeting__Group__2 ;
-    public final void rule__Greeting__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:153:1: ( rule__Greeting__Group__1__Impl rule__Greeting__Group__2 )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:154:2: rule__Greeting__Group__1__Impl rule__Greeting__Group__2
+             before(grammarAccess.getHelloGreetingAccess().getGroup()); 
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:132:1: ( rule__HelloGreeting__Group__0 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:132:2: rule__HelloGreeting__Group__0
             {
-            pushFollow(FOLLOW_rule__Greeting__Group__1__Impl_in_rule__Greeting__Group__1251);
-            rule__Greeting__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Greeting__Group__2_in_rule__Greeting__Group__1254);
-            rule__Greeting__Group__2();
+            pushFollow(FOLLOW_rule__HelloGreeting__Group__0_in_ruleHelloGreeting215);
+            rule__HelloGreeting__Group__0();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Greeting__Group__1"
-
-
-    // $ANTLR start "rule__Greeting__Group__1__Impl"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:161:1: rule__Greeting__Group__1__Impl : ( ( rule__Greeting__NameAssignment_1 ) ) ;
-    public final void rule__Greeting__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:165:1: ( ( ( rule__Greeting__NameAssignment_1 ) ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:166:1: ( ( rule__Greeting__NameAssignment_1 ) )
-            {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:166:1: ( ( rule__Greeting__NameAssignment_1 ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:167:1: ( rule__Greeting__NameAssignment_1 )
-            {
-             before(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:168:1: ( rule__Greeting__NameAssignment_1 )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:168:2: rule__Greeting__NameAssignment_1
-            {
-            pushFollow(FOLLOW_rule__Greeting__NameAssignment_1_in_rule__Greeting__Group__1__Impl281);
-            rule__Greeting__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
+             after(grammarAccess.getHelloGreetingAccess().getGroup()); 
 
             }
 
@@ -401,21 +319,182 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__1__Impl"
+    // $ANTLR end "ruleHelloGreeting"
 
 
-    // $ANTLR start "rule__Greeting__Group__2"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:178:1: rule__Greeting__Group__2 : rule__Greeting__Group__2__Impl ;
-    public final void rule__Greeting__Group__2() throws RecognitionException {
+    // $ANTLR start "entryRuleRefGreeting"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:144:1: entryRuleRefGreeting : ruleRefGreeting EOF ;
+    public final void entryRuleRefGreeting() throws RecognitionException {
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:145:1: ( ruleRefGreeting EOF )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:146:1: ruleRefGreeting EOF
+            {
+             before(grammarAccess.getRefGreetingRule()); 
+            pushFollow(FOLLOW_ruleRefGreeting_in_entryRuleRefGreeting242);
+            ruleRefGreeting();
+
+            state._fsp--;
+
+             after(grammarAccess.getRefGreetingRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRefGreeting249); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleRefGreeting"
+
+
+    // $ANTLR start "ruleRefGreeting"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:153:1: ruleRefGreeting : ( ( rule__RefGreeting__Group__0 ) ) ;
+    public final void ruleRefGreeting() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:182:1: ( rule__Greeting__Group__2__Impl )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:183:2: rule__Greeting__Group__2__Impl
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:157:2: ( ( ( rule__RefGreeting__Group__0 ) ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:158:1: ( ( rule__RefGreeting__Group__0 ) )
             {
-            pushFollow(FOLLOW_rule__Greeting__Group__2__Impl_in_rule__Greeting__Group__2311);
-            rule__Greeting__Group__2__Impl();
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:158:1: ( ( rule__RefGreeting__Group__0 ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:159:1: ( rule__RefGreeting__Group__0 )
+            {
+             before(grammarAccess.getRefGreetingAccess().getGroup()); 
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:160:1: ( rule__RefGreeting__Group__0 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:160:2: rule__RefGreeting__Group__0
+            {
+            pushFollow(FOLLOW_rule__RefGreeting__Group__0_in_ruleRefGreeting275);
+            rule__RefGreeting__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRefGreetingAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleRefGreeting"
+
+
+    // $ANTLR start "rule__Greeting__Alternatives"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:172:1: rule__Greeting__Alternatives : ( ( ruleHelloGreeting ) | ( ruleRefGreeting ) );
+    public final void rule__Greeting__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:176:1: ( ( ruleHelloGreeting ) | ( ruleRefGreeting ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==11) ) {
+                alt2=1;
+            }
+            else if ( (LA2_0==13) ) {
+                alt2=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+            switch (alt2) {
+                case 1 :
+                    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:177:1: ( ruleHelloGreeting )
+                    {
+                    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:177:1: ( ruleHelloGreeting )
+                    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:178:1: ruleHelloGreeting
+                    {
+                     before(grammarAccess.getGreetingAccess().getHelloGreetingParserRuleCall_0()); 
+                    pushFollow(FOLLOW_ruleHelloGreeting_in_rule__Greeting__Alternatives311);
+                    ruleHelloGreeting();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getGreetingAccess().getHelloGreetingParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:183:6: ( ruleRefGreeting )
+                    {
+                    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:183:6: ( ruleRefGreeting )
+                    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:184:1: ruleRefGreeting
+                    {
+                     before(grammarAccess.getGreetingAccess().getRefGreetingParserRuleCall_1()); 
+                    pushFollow(FOLLOW_ruleRefGreeting_in_rule__Greeting__Alternatives328);
+                    ruleRefGreeting();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getGreetingAccess().getRefGreetingParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Greeting__Alternatives"
+
+
+    // $ANTLR start "rule__HelloGreeting__Group__0"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:196:1: rule__HelloGreeting__Group__0 : rule__HelloGreeting__Group__0__Impl rule__HelloGreeting__Group__1 ;
+    public final void rule__HelloGreeting__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:200:1: ( rule__HelloGreeting__Group__0__Impl rule__HelloGreeting__Group__1 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:201:2: rule__HelloGreeting__Group__0__Impl rule__HelloGreeting__Group__1
+            {
+            pushFollow(FOLLOW_rule__HelloGreeting__Group__0__Impl_in_rule__HelloGreeting__Group__0358);
+            rule__HelloGreeting__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__HelloGreeting__Group__1_in_rule__HelloGreeting__Group__0361);
+            rule__HelloGreeting__Group__1();
 
             state._fsp--;
 
@@ -434,25 +513,25 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__2"
+    // $ANTLR end "rule__HelloGreeting__Group__0"
 
 
-    // $ANTLR start "rule__Greeting__Group__2__Impl"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:189:1: rule__Greeting__Group__2__Impl : ( '!' ) ;
-    public final void rule__Greeting__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__HelloGreeting__Group__0__Impl"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:208:1: rule__HelloGreeting__Group__0__Impl : ( 'Hello' ) ;
+    public final void rule__HelloGreeting__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:193:1: ( ( '!' ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:194:1: ( '!' )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:212:1: ( ( 'Hello' ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:213:1: ( 'Hello' )
             {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:194:1: ( '!' )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:195:1: '!'
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:213:1: ( 'Hello' )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:214:1: 'Hello'
             {
-             before(grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2()); 
-            match(input,12,FOLLOW_12_in_rule__Greeting__Group__2__Impl339); 
-             after(grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2()); 
+             before(grammarAccess.getHelloGreetingAccess().getHelloKeyword_0()); 
+            match(input,11,FOLLOW_11_in_rule__HelloGreeting__Group__0__Impl389); 
+             after(grammarAccess.getHelloGreetingAccess().getHelloKeyword_0()); 
 
             }
 
@@ -471,24 +550,334 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__2__Impl"
+    // $ANTLR end "rule__HelloGreeting__Group__0__Impl"
+
+
+    // $ANTLR start "rule__HelloGreeting__Group__1"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:227:1: rule__HelloGreeting__Group__1 : rule__HelloGreeting__Group__1__Impl rule__HelloGreeting__Group__2 ;
+    public final void rule__HelloGreeting__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:231:1: ( rule__HelloGreeting__Group__1__Impl rule__HelloGreeting__Group__2 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:232:2: rule__HelloGreeting__Group__1__Impl rule__HelloGreeting__Group__2
+            {
+            pushFollow(FOLLOW_rule__HelloGreeting__Group__1__Impl_in_rule__HelloGreeting__Group__1420);
+            rule__HelloGreeting__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__HelloGreeting__Group__2_in_rule__HelloGreeting__Group__1423);
+            rule__HelloGreeting__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__HelloGreeting__Group__1"
+
+
+    // $ANTLR start "rule__HelloGreeting__Group__1__Impl"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:239:1: rule__HelloGreeting__Group__1__Impl : ( ( rule__HelloGreeting__NameAssignment_1 ) ) ;
+    public final void rule__HelloGreeting__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:243:1: ( ( ( rule__HelloGreeting__NameAssignment_1 ) ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:244:1: ( ( rule__HelloGreeting__NameAssignment_1 ) )
+            {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:244:1: ( ( rule__HelloGreeting__NameAssignment_1 ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:245:1: ( rule__HelloGreeting__NameAssignment_1 )
+            {
+             before(grammarAccess.getHelloGreetingAccess().getNameAssignment_1()); 
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:246:1: ( rule__HelloGreeting__NameAssignment_1 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:246:2: rule__HelloGreeting__NameAssignment_1
+            {
+            pushFollow(FOLLOW_rule__HelloGreeting__NameAssignment_1_in_rule__HelloGreeting__Group__1__Impl450);
+            rule__HelloGreeting__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getHelloGreetingAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__HelloGreeting__Group__1__Impl"
+
+
+    // $ANTLR start "rule__HelloGreeting__Group__2"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:256:1: rule__HelloGreeting__Group__2 : rule__HelloGreeting__Group__2__Impl ;
+    public final void rule__HelloGreeting__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:260:1: ( rule__HelloGreeting__Group__2__Impl )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:261:2: rule__HelloGreeting__Group__2__Impl
+            {
+            pushFollow(FOLLOW_rule__HelloGreeting__Group__2__Impl_in_rule__HelloGreeting__Group__2480);
+            rule__HelloGreeting__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__HelloGreeting__Group__2"
+
+
+    // $ANTLR start "rule__HelloGreeting__Group__2__Impl"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:267:1: rule__HelloGreeting__Group__2__Impl : ( '!' ) ;
+    public final void rule__HelloGreeting__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:271:1: ( ( '!' ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:272:1: ( '!' )
+            {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:272:1: ( '!' )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:273:1: '!'
+            {
+             before(grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_2()); 
+            match(input,12,FOLLOW_12_in_rule__HelloGreeting__Group__2__Impl508); 
+             after(grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__HelloGreeting__Group__2__Impl"
+
+
+    // $ANTLR start "rule__RefGreeting__Group__0"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:292:1: rule__RefGreeting__Group__0 : rule__RefGreeting__Group__0__Impl rule__RefGreeting__Group__1 ;
+    public final void rule__RefGreeting__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:296:1: ( rule__RefGreeting__Group__0__Impl rule__RefGreeting__Group__1 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:297:2: rule__RefGreeting__Group__0__Impl rule__RefGreeting__Group__1
+            {
+            pushFollow(FOLLOW_rule__RefGreeting__Group__0__Impl_in_rule__RefGreeting__Group__0545);
+            rule__RefGreeting__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__RefGreeting__Group__1_in_rule__RefGreeting__Group__0548);
+            rule__RefGreeting__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RefGreeting__Group__0"
+
+
+    // $ANTLR start "rule__RefGreeting__Group__0__Impl"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:304:1: rule__RefGreeting__Group__0__Impl : ( 'ref' ) ;
+    public final void rule__RefGreeting__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:308:1: ( ( 'ref' ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:309:1: ( 'ref' )
+            {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:309:1: ( 'ref' )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:310:1: 'ref'
+            {
+             before(grammarAccess.getRefGreetingAccess().getRefKeyword_0()); 
+            match(input,13,FOLLOW_13_in_rule__RefGreeting__Group__0__Impl576); 
+             after(grammarAccess.getRefGreetingAccess().getRefKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RefGreeting__Group__0__Impl"
+
+
+    // $ANTLR start "rule__RefGreeting__Group__1"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:323:1: rule__RefGreeting__Group__1 : rule__RefGreeting__Group__1__Impl ;
+    public final void rule__RefGreeting__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:327:1: ( rule__RefGreeting__Group__1__Impl )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:328:2: rule__RefGreeting__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__RefGreeting__Group__1__Impl_in_rule__RefGreeting__Group__1607);
+            rule__RefGreeting__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RefGreeting__Group__1"
+
+
+    // $ANTLR start "rule__RefGreeting__Group__1__Impl"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:334:1: rule__RefGreeting__Group__1__Impl : ( ( rule__RefGreeting__GreetingAssignment_1 ) ) ;
+    public final void rule__RefGreeting__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:338:1: ( ( ( rule__RefGreeting__GreetingAssignment_1 ) ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:339:1: ( ( rule__RefGreeting__GreetingAssignment_1 ) )
+            {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:339:1: ( ( rule__RefGreeting__GreetingAssignment_1 ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:340:1: ( rule__RefGreeting__GreetingAssignment_1 )
+            {
+             before(grammarAccess.getRefGreetingAccess().getGreetingAssignment_1()); 
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:341:1: ( rule__RefGreeting__GreetingAssignment_1 )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:341:2: rule__RefGreeting__GreetingAssignment_1
+            {
+            pushFollow(FOLLOW_rule__RefGreeting__GreetingAssignment_1_in_rule__RefGreeting__Group__1__Impl634);
+            rule__RefGreeting__GreetingAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRefGreetingAccess().getGreetingAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RefGreeting__Group__1__Impl"
 
 
     // $ANTLR start "rule__Model__GreetingsAssignment"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:215:1: rule__Model__GreetingsAssignment : ( ruleGreeting ) ;
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:356:1: rule__Model__GreetingsAssignment : ( ruleGreeting ) ;
     public final void rule__Model__GreetingsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:219:1: ( ( ruleGreeting ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:220:1: ( ruleGreeting )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:360:1: ( ( ruleGreeting ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:361:1: ( ruleGreeting )
             {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:220:1: ( ruleGreeting )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:221:1: ruleGreeting
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:361:1: ( ruleGreeting )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:362:1: ruleGreeting
             {
              before(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleGreeting_in_rule__Model__GreetingsAssignment381);
+            pushFollow(FOLLOW_ruleGreeting_in_rule__Model__GreetingsAssignment673);
             ruleGreeting();
 
             state._fsp--;
@@ -515,22 +904,22 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__Model__GreetingsAssignment"
 
 
-    // $ANTLR start "rule__Greeting__NameAssignment_1"
-    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:230:1: rule__Greeting__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Greeting__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__HelloGreeting__NameAssignment_1"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:371:1: rule__HelloGreeting__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__HelloGreeting__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:234:1: ( ( RULE_ID ) )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:235:1: ( RULE_ID )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:375:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:376:1: ( RULE_ID )
             {
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:235:1: ( RULE_ID )
-            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:236:1: RULE_ID
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:376:1: ( RULE_ID )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:377:1: RULE_ID
             {
-             before(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Greeting__NameAssignment_1412); 
-             after(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getHelloGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__HelloGreeting__NameAssignment_1704); 
+             after(grammarAccess.getHelloGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -549,7 +938,52 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__NameAssignment_1"
+    // $ANTLR end "rule__HelloGreeting__NameAssignment_1"
+
+
+    // $ANTLR start "rule__RefGreeting__GreetingAssignment_1"
+    // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:386:1: rule__RefGreeting__GreetingAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__RefGreeting__GreetingAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:390:1: ( ( ( RULE_ID ) ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:391:1: ( ( RULE_ID ) )
+            {
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:391:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:392:1: ( RULE_ID )
+            {
+             before(grammarAccess.getRefGreetingAccess().getGreetingHelloGreetingCrossReference_1_0()); 
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:393:1: ( RULE_ID )
+            // ../org.xtext.example.index.greetings.ui/src-gen/org/xtext/example/index/greetings/ui/contentassist/antlr/internal/InternalGreetings.g:394:1: RULE_ID
+            {
+             before(grammarAccess.getRefGreetingAccess().getGreetingHelloGreetingIDTerminalRuleCall_1_0_1()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__RefGreeting__GreetingAssignment_1739); 
+             after(grammarAccess.getRefGreetingAccess().getGreetingHelloGreetingIDTerminalRuleCall_1_0_1()); 
+
+            }
+
+             after(grammarAccess.getRefGreetingAccess().getGreetingHelloGreetingCrossReference_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RefGreeting__GreetingAssignment_1"
 
     // Delegated rules
 
@@ -558,19 +992,33 @@ public class InternalGreetingsParser extends AbstractInternalContentAssistParser
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Model__GreetingsAssignment_in_ruleModel94 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_rule__Model__GreetingsAssignment_in_ruleModel94 = new BitSet(new long[]{0x0000000000002802L});
     public static final BitSet FOLLOW_ruleGreeting_in_entryRuleGreeting122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleGreeting129 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Greeting__Group__0_in_ruleGreeting155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Greeting__Group__0__Impl_in_rule__Greeting__Group__0189 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Greeting__Group__1_in_rule__Greeting__Group__0192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__Greeting__Group__0__Impl220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Greeting__Group__1__Impl_in_rule__Greeting__Group__1251 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__Greeting__Group__2_in_rule__Greeting__Group__1254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Greeting__NameAssignment_1_in_rule__Greeting__Group__1__Impl281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Greeting__Group__2__Impl_in_rule__Greeting__Group__2311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__Greeting__Group__2__Impl339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGreeting_in_rule__Model__GreetingsAssignment381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Greeting__NameAssignment_1412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Greeting__Alternatives_in_ruleGreeting155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHelloGreeting_in_entryRuleHelloGreeting182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleHelloGreeting189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__Group__0_in_ruleHelloGreeting215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRefGreeting_in_entryRuleRefGreeting242 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRefGreeting249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RefGreeting__Group__0_in_ruleRefGreeting275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleHelloGreeting_in_rule__Greeting__Alternatives311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRefGreeting_in_rule__Greeting__Alternatives328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__Group__0__Impl_in_rule__HelloGreeting__Group__0358 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__Group__1_in_rule__HelloGreeting__Group__0361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__HelloGreeting__Group__0__Impl389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__Group__1__Impl_in_rule__HelloGreeting__Group__1420 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__Group__2_in_rule__HelloGreeting__Group__1423 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__NameAssignment_1_in_rule__HelloGreeting__Group__1__Impl450 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__HelloGreeting__Group__2__Impl_in_rule__HelloGreeting__Group__2480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__HelloGreeting__Group__2__Impl508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RefGreeting__Group__0__Impl_in_rule__RefGreeting__Group__0545 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__RefGreeting__Group__1_in_rule__RefGreeting__Group__0548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__RefGreeting__Group__0__Impl576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RefGreeting__Group__1__Impl_in_rule__RefGreeting__Group__1607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RefGreeting__GreetingAssignment_1_in_rule__RefGreeting__Group__1__Impl634 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGreeting_in_rule__Model__GreetingsAssignment673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__HelloGreeting__NameAssignment_1704 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__RefGreeting__GreetingAssignment_1739 = new BitSet(new long[]{0x0000000000000002L});
 
 }

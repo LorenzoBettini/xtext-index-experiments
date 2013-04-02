@@ -85,6 +85,16 @@ public class GreetingsAdapterFactory extends AdapterFactoryImpl
         return createGreetingAdapter();
       }
       @Override
+      public Adapter caseHelloGreeting(HelloGreeting object)
+      {
+        return createHelloGreetingAdapter();
+      }
+      @Override
+      public Adapter caseRefGreeting(RefGreeting object)
+      {
+        return createRefGreetingAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -132,6 +142,36 @@ public class GreetingsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGreetingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.index.greetings.greetings.HelloGreeting <em>Hello Greeting</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.index.greetings.greetings.HelloGreeting
+   * @generated
+   */
+  public Adapter createHelloGreetingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.index.greetings.greetings.RefGreeting <em>Ref Greeting</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.index.greetings.greetings.RefGreeting
+   * @generated
+   */
+  public Adapter createRefGreetingAdapter()
   {
     return null;
   }

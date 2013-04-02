@@ -95,22 +95,69 @@ public interface GreetingsPackage extends EPackage
   int GREETING = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GREETING__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Greeting</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int GREETING_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.index.greetings.greetings.impl.HelloGreetingImpl <em>Hello Greeting</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.index.greetings.greetings.impl.HelloGreetingImpl
+   * @see org.xtext.example.index.greetings.greetings.impl.GreetingsPackageImpl#getHelloGreeting()
+   * @generated
+   */
+  int HELLO_GREETING = 2;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELLO_GREETING__NAME = GREETING_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Hello Greeting</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELLO_GREETING_FEATURE_COUNT = GREETING_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.index.greetings.greetings.impl.RefGreetingImpl <em>Ref Greeting</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.index.greetings.greetings.impl.RefGreetingImpl
+   * @see org.xtext.example.index.greetings.greetings.impl.GreetingsPackageImpl#getRefGreeting()
+   * @generated
+   */
+  int REF_GREETING = 3;
+
+  /**
+   * The feature id for the '<em><b>Greeting</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_GREETING__GREETING = GREETING_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Ref Greeting</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REF_GREETING_FEATURE_COUNT = GREETING_FEATURE_COUNT + 1;
 
 
   /**
@@ -145,15 +192,46 @@ public interface GreetingsPackage extends EPackage
   EClass getGreeting();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.index.greetings.greetings.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.index.greetings.greetings.HelloGreeting <em>Hello Greeting</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Hello Greeting</em>'.
+   * @see org.xtext.example.index.greetings.greetings.HelloGreeting
+   * @generated
+   */
+  EClass getHelloGreeting();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.index.greetings.greetings.HelloGreeting#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.index.greetings.greetings.Greeting#getName()
-   * @see #getGreeting()
+   * @see org.xtext.example.index.greetings.greetings.HelloGreeting#getName()
+   * @see #getHelloGreeting()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getHelloGreeting_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.index.greetings.greetings.RefGreeting <em>Ref Greeting</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ref Greeting</em>'.
+   * @see org.xtext.example.index.greetings.greetings.RefGreeting
+   * @generated
+   */
+  EClass getRefGreeting();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.index.greetings.greetings.RefGreeting#getGreeting <em>Greeting</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Greeting</em>'.
+   * @see org.xtext.example.index.greetings.greetings.RefGreeting#getGreeting()
+   * @see #getRefGreeting()
+   * @generated
+   */
+  EReference getRefGreeting_Greeting();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -207,12 +285,40 @@ public interface GreetingsPackage extends EPackage
     EClass GREETING = eINSTANCE.getGreeting();
 
     /**
+     * The meta object literal for the '{@link org.xtext.example.index.greetings.greetings.impl.HelloGreetingImpl <em>Hello Greeting</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.index.greetings.greetings.impl.HelloGreetingImpl
+     * @see org.xtext.example.index.greetings.greetings.impl.GreetingsPackageImpl#getHelloGreeting()
+     * @generated
+     */
+    EClass HELLO_GREETING = eINSTANCE.getHelloGreeting();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute HELLO_GREETING__NAME = eINSTANCE.getHelloGreeting_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.index.greetings.greetings.impl.RefGreetingImpl <em>Ref Greeting</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.index.greetings.greetings.impl.RefGreetingImpl
+     * @see org.xtext.example.index.greetings.greetings.impl.GreetingsPackageImpl#getRefGreeting()
+     * @generated
+     */
+    EClass REF_GREETING = eINSTANCE.getRefGreeting();
+
+    /**
+     * The meta object literal for the '<em><b>Greeting</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REF_GREETING__GREETING = eINSTANCE.getRefGreeting_Greeting();
 
   }
 

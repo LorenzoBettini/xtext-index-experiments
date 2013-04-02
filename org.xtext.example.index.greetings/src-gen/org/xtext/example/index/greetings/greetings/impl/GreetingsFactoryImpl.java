@@ -66,6 +66,8 @@ public class GreetingsFactoryImpl extends EFactoryImpl implements GreetingsFacto
     {
       case GreetingsPackage.MODEL: return createModel();
       case GreetingsPackage.GREETING: return createGreeting();
+      case GreetingsPackage.HELLO_GREETING: return createHelloGreeting();
+      case GreetingsPackage.REF_GREETING: return createRefGreeting();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -91,6 +93,28 @@ public class GreetingsFactoryImpl extends EFactoryImpl implements GreetingsFacto
   {
     GreetingImpl greeting = new GreetingImpl();
     return greeting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HelloGreeting createHelloGreeting()
+  {
+    HelloGreetingImpl helloGreeting = new HelloGreetingImpl();
+    return helloGreeting;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RefGreeting createRefGreeting()
+  {
+    RefGreetingImpl refGreeting = new RefGreetingImpl();
+    return refGreeting;
   }
 
   /**

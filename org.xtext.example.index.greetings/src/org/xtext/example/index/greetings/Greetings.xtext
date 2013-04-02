@@ -4,6 +4,12 @@ generate greetings "http://www.xtext.org/example/index/greetings/Greetings"
 
 Model:
 	greetings+=Greeting*;
-	
+
 Greeting:
+	HelloGreeting | RefGreeting ;
+	
+HelloGreeting:
 	'Hello' name=ID '!';
+
+RefGreeting:
+	'ref' greeting=[HelloGreeting];

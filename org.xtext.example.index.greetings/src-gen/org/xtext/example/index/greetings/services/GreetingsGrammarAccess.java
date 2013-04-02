@@ -36,13 +36,33 @@ public class GreetingsGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class GreetingElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Greeting");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cHelloGreetingParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRefGreetingParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Greeting:
+		//	HelloGreeting | RefGreeting;
+		public ParserRule getRule() { return rule; }
+
+		//HelloGreeting | RefGreeting
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//HelloGreeting
+		public RuleCall getHelloGreetingParserRuleCall_0() { return cHelloGreetingParserRuleCall_0; }
+
+		//RefGreeting
+		public RuleCall getRefGreetingParserRuleCall_1() { return cRefGreetingParserRuleCall_1; }
+	}
+
+	public class HelloGreetingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HelloGreeting");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//Greeting:
+		//HelloGreeting:
 		//	"Hello" name=ID "!";
 		public ParserRule getRule() { return rule; }
 
@@ -61,10 +81,40 @@ public class GreetingsGrammarAccess extends AbstractGrammarElementFinder {
 		//"!"
 		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
 	}
+
+	public class RefGreetingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RefGreeting");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRefKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cGreetingAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cGreetingHelloGreetingCrossReference_1_0 = (CrossReference)cGreetingAssignment_1.eContents().get(0);
+		private final RuleCall cGreetingHelloGreetingIDTerminalRuleCall_1_0_1 = (RuleCall)cGreetingHelloGreetingCrossReference_1_0.eContents().get(1);
+		
+		//RefGreeting:
+		//	"ref" greeting=[HelloGreeting];
+		public ParserRule getRule() { return rule; }
+
+		//"ref" greeting=[HelloGreeting]
+		public Group getGroup() { return cGroup; }
+
+		//"ref"
+		public Keyword getRefKeyword_0() { return cRefKeyword_0; }
+
+		//greeting=[HelloGreeting]
+		public Assignment getGreetingAssignment_1() { return cGreetingAssignment_1; }
+
+		//[HelloGreeting]
+		public CrossReference getGreetingHelloGreetingCrossReference_1_0() { return cGreetingHelloGreetingCrossReference_1_0; }
+
+		//ID
+		public RuleCall getGreetingHelloGreetingIDTerminalRuleCall_1_0_1() { return cGreetingHelloGreetingIDTerminalRuleCall_1_0_1; }
+	}
 	
 	
 	private ModelElements pModel;
 	private GreetingElements pGreeting;
+	private HelloGreetingElements pHelloGreeting;
+	private RefGreetingElements pRefGreeting;
 	
 	private final Grammar grammar;
 
@@ -115,13 +165,33 @@ public class GreetingsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Greeting:
-	//	"Hello" name=ID "!";
+	//	HelloGreeting | RefGreeting;
 	public GreetingElements getGreetingAccess() {
 		return (pGreeting != null) ? pGreeting : (pGreeting = new GreetingElements());
 	}
 	
 	public ParserRule getGreetingRule() {
 		return getGreetingAccess().getRule();
+	}
+
+	//HelloGreeting:
+	//	"Hello" name=ID "!";
+	public HelloGreetingElements getHelloGreetingAccess() {
+		return (pHelloGreeting != null) ? pHelloGreeting : (pHelloGreeting = new HelloGreetingElements());
+	}
+	
+	public ParserRule getHelloGreetingRule() {
+		return getHelloGreetingAccess().getRule();
+	}
+
+	//RefGreeting:
+	//	"ref" greeting=[HelloGreeting];
+	public RefGreetingElements getRefGreetingAccess() {
+		return (pRefGreeting != null) ? pRefGreeting : (pRefGreeting = new RefGreetingElements());
+	}
+	
+	public ParserRule getRefGreetingRule() {
+		return getRefGreetingAccess().getRule();
 	}
 
 	//terminal ID:

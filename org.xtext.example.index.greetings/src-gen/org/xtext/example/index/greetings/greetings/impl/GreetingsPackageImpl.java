@@ -12,7 +12,9 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.example.index.greetings.greetings.Greeting;
 import org.xtext.example.index.greetings.greetings.GreetingsFactory;
 import org.xtext.example.index.greetings.greetings.GreetingsPackage;
+import org.xtext.example.index.greetings.greetings.HelloGreeting;
 import org.xtext.example.index.greetings.greetings.Model;
+import org.xtext.example.index.greetings.greetings.RefGreeting;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +37,20 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
    * @generated
    */
   private EClass greetingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass helloGreetingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass refGreetingEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -134,9 +150,39 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGreeting_Name()
+  public EClass getHelloGreeting()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return helloGreetingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHelloGreeting_Name()
+  {
+    return (EAttribute)helloGreetingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRefGreeting()
+  {
+    return refGreetingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRefGreeting_Greeting()
+  {
+    return (EReference)refGreetingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -173,7 +219,12 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
     createEReference(modelEClass, MODEL__GREETINGS);
 
     greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+
+    helloGreetingEClass = createEClass(HELLO_GREETING);
+    createEAttribute(helloGreetingEClass, HELLO_GREETING__NAME);
+
+    refGreetingEClass = createEClass(REF_GREETING);
+    createEReference(refGreetingEClass, REF_GREETING__GREETING);
   }
 
   /**
@@ -205,13 +256,20 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    helloGreetingEClass.getESuperTypes().add(this.getGreeting());
+    refGreetingEClass.getESuperTypes().add(this.getGreeting());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(helloGreetingEClass, HelloGreeting.class, "HelloGreeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHelloGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, HelloGreeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(refGreetingEClass, RefGreeting.class, "RefGreeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRefGreeting_Greeting(), this.getHelloGreeting(), null, "greeting", null, 0, 1, RefGreeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

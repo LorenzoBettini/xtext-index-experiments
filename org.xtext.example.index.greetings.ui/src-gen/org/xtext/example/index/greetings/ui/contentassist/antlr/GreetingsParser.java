@@ -37,9 +37,12 @@ public class GreetingsParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
+					put(grammarAccess.getGreetingAccess().getAlternatives(), "rule__Greeting__Alternatives");
+					put(grammarAccess.getHelloGreetingAccess().getGroup(), "rule__HelloGreeting__Group__0");
+					put(grammarAccess.getRefGreetingAccess().getGroup(), "rule__RefGreeting__Group__0");
 					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-					put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+					put(grammarAccess.getHelloGreetingAccess().getNameAssignment_1(), "rule__HelloGreeting__NameAssignment_1");
+					put(grammarAccess.getRefGreetingAccess().getGreetingAssignment_1(), "rule__RefGreeting__GreetingAssignment_1");
 				}
 			};
 		}

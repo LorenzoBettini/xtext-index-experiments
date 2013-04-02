@@ -116,19 +116,59 @@ ruleGreeting returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getGreetingAccess().getHelloGreetingParserRuleCall_0()); 
+    }
+    this_HelloGreeting_0=ruleHelloGreeting
+    { 
+        $current = $this_HelloGreeting_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getGreetingAccess().getRefGreetingParserRuleCall_1()); 
+    }
+    this_RefGreeting_1=ruleRefGreeting
+    { 
+        $current = $this_RefGreeting_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleHelloGreeting
+entryRuleHelloGreeting returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getHelloGreetingRule()); }
+	 iv_ruleHelloGreeting=ruleHelloGreeting 
+	 { $current=$iv_ruleHelloGreeting.current; } 
+	 EOF 
+;
+
+// Rule HelloGreeting
+ruleHelloGreeting returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
 (	otherlv_0='Hello' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getHelloGreetingAccess().getHelloKeyword_0());
     }
 (
 (
 		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getHelloGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getGreetingRule());
+	            $current = createModelElement(grammarAccess.getHelloGreetingRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -140,9 +180,47 @@ ruleGreeting returns [EObject current=null]
 )
 )	otherlv_2='!' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_2());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleRefGreeting
+entryRuleRefGreeting returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRefGreetingRule()); }
+	 iv_ruleRefGreeting=ruleRefGreeting 
+	 { $current=$iv_ruleRefGreeting.current; } 
+	 EOF 
+;
+
+// Rule RefGreeting
+ruleRefGreeting returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='ref' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getRefGreetingAccess().getRefKeyword_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getRefGreetingRule());
+	        }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getRefGreetingAccess().getGreetingHelloGreetingCrossReference_1_0()); 
+	}
+
+)
+))
 ;
 
 

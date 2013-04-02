@@ -10,8 +10,12 @@
     <genClasses ecoreClass="Greetings.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Greetings.ecore#//Model/greetings"/>
     </genClasses>
-    <genClasses ecoreClass="Greetings.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Greetings.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Greetings.ecore#//Greeting"/>
+    <genClasses ecoreClass="Greetings.ecore#//HelloGreeting">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Greetings.ecore#//HelloGreeting/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Greetings.ecore#//RefGreeting">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Greetings.ecore#//RefGreeting/greeting"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
