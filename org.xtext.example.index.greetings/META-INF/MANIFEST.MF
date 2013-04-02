@@ -21,15 +21,16 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: org.xtext.example.index.greetings,
- org.xtext.example.index.greetings.services,
+ org.xtext.example.index.greetings.formatting,
+ org.xtext.example.index.greetings.generator,
  org.xtext.example.index.greetings.greetings,
  org.xtext.example.index.greetings.greetings.impl,
  org.xtext.example.index.greetings.greetings.util,
- org.xtext.example.index.greetings.serializer,
+ org.xtext.example.index.greetings.lib,
  org.xtext.example.index.greetings.parser.antlr,
  org.xtext.example.index.greetings.parser.antlr.internal,
- org.xtext.example.index.greetings.validation,
  org.xtext.example.index.greetings.scoping,
- org.xtext.example.index.greetings.generator,
- org.xtext.example.index.greetings.formatting
+ org.xtext.example.index.greetings.serializer,
+ org.xtext.example.index.greetings.services,
+ org.xtext.example.index.greetings.validation
 
