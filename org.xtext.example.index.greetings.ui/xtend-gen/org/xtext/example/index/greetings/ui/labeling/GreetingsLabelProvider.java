@@ -3,7 +3,10 @@
  */
 package org.xtext.example.index.greetings.ui.labeling;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 import org.xtext.example.index.greetings.greetings.HelloGreeting;
@@ -23,8 +26,35 @@ public class GreetingsLabelProvider extends DefaultEObjectLabelProvider {
   
   public String text(final RefGreeting ref) {
     HelloGreeting _greeting = ref.getGreeting();
-    String _name = _greeting.getName();
-    String _plus = ("ref: " + _name);
+    String _text = this.text(_greeting);
+    String _plus = ("ref: " + _text);
     return _plus;
+  }
+  
+  public String text(final HelloGreeting hello) {
+    String _name = hello==null?(String)null:hello.getName();
+    String _xifexpression = null;
+    HelloGreeting _parent = hello.getParent();
+    boolean _notEquals = (!Objects.equal(_parent, null));
+    if (_notEquals) {
+      HelloGreeting _parent_1 = hello.getParent();
+      HelloGreeting _ensureIsResolved = this.ensureIsResolved(_parent_1, hello);
+      String _text = this.text(_ensureIsResolved);
+      String _plus = (" -> " + _text);
+      _xifexpression = _plus;
+    } else {
+      _xifexpression = "";
+    }
+    String _plus_1 = (_name + _xifexpression);
+    return _plus_1;
+  }
+  
+  public HelloGreeting ensureIsResolved(final HelloGreeting ref, final HelloGreeting context) {
+    boolean _eIsProxy = ref.eIsProxy();
+    if (_eIsProxy) {
+      final EObject resolved = EcoreUtil.resolve(ref, context);
+      return ((HelloGreeting) resolved);
+    }
+    return ref;
   }
 }

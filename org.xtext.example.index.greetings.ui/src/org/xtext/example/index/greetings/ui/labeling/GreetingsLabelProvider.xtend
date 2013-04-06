@@ -5,6 +5,8 @@ package org.xtext.example.index.greetings.ui.labeling
 
 import com.google.inject.Inject
 import org.xtext.example.index.greetings.greetings.RefGreeting
+import org.xtext.example.index.greetings.greetings.HelloGreeting
+import org.eclipse.emf.ecore.util.EcoreUtil
 
 /**
  * Provides labels for a EObjects.
@@ -19,6 +21,23 @@ class GreetingsLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLa
 	}
 
 	def text(RefGreeting ref) {
-		'ref: ' + ref.greeting.name
+		'ref: ' + ref.greeting.text
+	}
+	
+	def String text(HelloGreeting hello) {
+		hello?.name +
+		if (hello.parent != null) {
+			" -> " + hello.parent.ensureIsResolved(hello).text
+		} else {
+			""
+		}
+	}
+	
+	def ensureIsResolved(HelloGreeting ref, HelloGreeting context) {
+		if (ref.eIsProxy) {
+			val resolved = EcoreUtil::resolve(ref, context)
+			return resolved as HelloGreeting
+		}
+		return ref
 	}
 }
