@@ -170,6 +170,16 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getHelloGreeting_Parent()
+  {
+    return (EReference)helloGreetingEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRefGreeting()
   {
     return refGreetingEClass;
@@ -222,6 +232,7 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
 
     helloGreetingEClass = createEClass(HELLO_GREETING);
     createEAttribute(helloGreetingEClass, HELLO_GREETING__NAME);
+    createEReference(helloGreetingEClass, HELLO_GREETING__PARENT);
 
     refGreetingEClass = createEClass(REF_GREETING);
     createEReference(refGreetingEClass, REF_GREETING__GREETING);
@@ -267,6 +278,7 @@ public class GreetingsPackageImpl extends EPackageImpl implements GreetingsPacka
 
     initEClass(helloGreetingEClass, HelloGreeting.class, "HelloGreeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHelloGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, HelloGreeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHelloGreeting_Parent(), this.getHelloGreeting(), null, "parent", null, 0, 1, HelloGreeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(refGreetingEClass, RefGreeting.class, "RefGreeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRefGreeting_Greeting(), this.getHelloGreeting(), null, "greeting", null, 0, 1, RefGreeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

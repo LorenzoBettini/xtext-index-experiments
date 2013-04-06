@@ -9,7 +9,7 @@ Greeting:
 	HelloGreeting | RefGreeting ;
 	
 HelloGreeting:
-	'Hello' name=ID '!';
+	'Hello' name=ID ('extends' parent=[HelloGreeting])? '!';
 
 RefGreeting:
 	'ref' greeting=[HelloGreeting];

@@ -39,9 +39,11 @@ public class GreetingsParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getGreetingAccess().getAlternatives(), "rule__Greeting__Alternatives");
 					put(grammarAccess.getHelloGreetingAccess().getGroup(), "rule__HelloGreeting__Group__0");
+					put(grammarAccess.getHelloGreetingAccess().getGroup_2(), "rule__HelloGreeting__Group_2__0");
 					put(grammarAccess.getRefGreetingAccess().getGroup(), "rule__RefGreeting__Group__0");
 					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
 					put(grammarAccess.getHelloGreetingAccess().getNameAssignment_1(), "rule__HelloGreeting__NameAssignment_1");
+					put(grammarAccess.getHelloGreetingAccess().getParentAssignment_2_1(), "rule__HelloGreeting__ParentAssignment_2_1");
 					put(grammarAccess.getRefGreetingAccess().getGreetingAssignment_1(), "rule__RefGreeting__GreetingAssignment_1");
 				}
 			};

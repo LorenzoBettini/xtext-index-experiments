@@ -60,13 +60,18 @@ public class GreetingsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cParentAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cParentHelloGreetingCrossReference_2_1_0 = (CrossReference)cParentAssignment_2_1.eContents().get(0);
+		private final RuleCall cParentHelloGreetingIDTerminalRuleCall_2_1_0_1 = (RuleCall)cParentHelloGreetingCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cExclamationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//HelloGreeting:
-		//	"Hello" name=ID "!";
+		//	"Hello" name=ID ("extends" parent=[HelloGreeting])? "!";
 		public ParserRule getRule() { return rule; }
 
-		//"Hello" name=ID "!"
+		//"Hello" name=ID ("extends" parent=[HelloGreeting])? "!"
 		public Group getGroup() { return cGroup; }
 
 		//"Hello"
@@ -78,8 +83,23 @@ public class GreetingsGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 
+		//("extends" parent=[HelloGreeting])?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"extends"
+		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
+
+		//parent=[HelloGreeting]
+		public Assignment getParentAssignment_2_1() { return cParentAssignment_2_1; }
+
+		//[HelloGreeting]
+		public CrossReference getParentHelloGreetingCrossReference_2_1_0() { return cParentHelloGreetingCrossReference_2_1_0; }
+
+		//ID
+		public RuleCall getParentHelloGreetingIDTerminalRuleCall_2_1_0_1() { return cParentHelloGreetingIDTerminalRuleCall_2_1_0_1; }
+
 		//"!"
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		public Keyword getExclamationMarkKeyword_3() { return cExclamationMarkKeyword_3; }
 	}
 
 	public class RefGreetingElements extends AbstractParserRuleElementFinder {
@@ -175,7 +195,7 @@ public class GreetingsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//HelloGreeting:
-	//	"Hello" name=ID "!";
+	//	"Hello" name=ID ("extends" parent=[HelloGreeting])? "!";
 	public HelloGreetingElements getHelloGreetingAccess() {
 		return (pHelloGreeting != null) ? pHelloGreeting : (pHelloGreeting = new HelloGreetingElements());
 	}

@@ -21,12 +21,13 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalGreetingsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'", "'ref'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'extends'", "'!'", "'ref'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_STRING=6;
     public static final int T__12=12;
     public static final int T__11=11;
+    public static final int T__14=14;
     public static final int T__13=13;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=5;
@@ -129,7 +130,7 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11||LA1_0==13) ) {
+                if ( (LA1_0==11||LA1_0==14) ) {
                     alt1=1;
                 }
 
@@ -248,7 +249,7 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
             if ( (LA2_0==11) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==13) ) {
+            else if ( (LA2_0==14) ) {
                 alt2=2;
             }
             else {
@@ -351,22 +352,24 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHelloGreeting"
-    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:155:1: ruleHelloGreeting returns [EObject current=null] : (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) ;
+    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:155:1: ruleHelloGreeting returns [EObject current=null] : (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '!' ) ;
     public final EObject ruleHelloGreeting() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:158:28: ( (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:159:1: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:158:28: ( (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '!' ) )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:159:1: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '!' )
             {
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:159:1: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:159:3: otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!'
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:159:1: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '!' )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:159:3: otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )? otherlv_4= '!'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_11_in_ruleHelloGreeting332); 
 
@@ -398,9 +401,51 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleHelloGreeting366); 
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:181:2: (otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) ) )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-                	newLeafNode(otherlv_2, grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_2());
+            if ( (LA3_0==12) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:181:4: otherlv_2= 'extends' ( (otherlv_3= RULE_ID ) )
+                    {
+                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleHelloGreeting367); 
+
+                        	newLeafNode(otherlv_2, grammarAccess.getHelloGreetingAccess().getExtendsKeyword_2_0());
+                        
+                    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:185:1: ( (otherlv_3= RULE_ID ) )
+                    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:186:1: (otherlv_3= RULE_ID )
+                    {
+                    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:186:1: (otherlv_3= RULE_ID )
+                    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:187:3: otherlv_3= RULE_ID
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getHelloGreetingRule());
+                    	        }
+                            
+                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleHelloGreeting387); 
+
+                    		newLeafNode(otherlv_3, grammarAccess.getHelloGreetingAccess().getParentHelloGreetingCrossReference_2_1_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleHelloGreeting401); 
+
+                	newLeafNode(otherlv_4, grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_3());
                 
 
             }
@@ -423,7 +468,7 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRefGreeting"
-    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:193:1: entryRuleRefGreeting returns [EObject current=null] : iv_ruleRefGreeting= ruleRefGreeting EOF ;
+    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:210:1: entryRuleRefGreeting returns [EObject current=null] : iv_ruleRefGreeting= ruleRefGreeting EOF ;
     public final EObject entryRuleRefGreeting() throws RecognitionException {
         EObject current = null;
 
@@ -431,17 +476,17 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:194:2: (iv_ruleRefGreeting= ruleRefGreeting EOF )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:195:2: iv_ruleRefGreeting= ruleRefGreeting EOF
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:211:2: (iv_ruleRefGreeting= ruleRefGreeting EOF )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:212:2: iv_ruleRefGreeting= ruleRefGreeting EOF
             {
              newCompositeNode(grammarAccess.getRefGreetingRule()); 
-            pushFollow(FOLLOW_ruleRefGreeting_in_entryRuleRefGreeting402);
+            pushFollow(FOLLOW_ruleRefGreeting_in_entryRuleRefGreeting437);
             iv_ruleRefGreeting=ruleRefGreeting();
 
             state._fsp--;
 
              current =iv_ruleRefGreeting; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRefGreeting412); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRefGreeting447); 
 
             }
 
@@ -459,7 +504,7 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRefGreeting"
-    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:202:1: ruleRefGreeting returns [EObject current=null] : (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) ) ;
+    // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:219:1: ruleRefGreeting returns [EObject current=null] : (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) ) ;
     public final EObject ruleRefGreeting() throws RecognitionException {
         EObject current = null;
 
@@ -469,28 +514,28 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:205:28: ( (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) ) )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:206:1: (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:222:28: ( (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) ) )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:223:1: (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) )
             {
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:206:1: (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:206:3: otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:223:1: (otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) ) )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:223:3: otherlv_0= 'ref' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_13_in_ruleRefGreeting449); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleRefGreeting484); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRefGreetingAccess().getRefKeyword_0());
                 
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:210:1: ( (otherlv_1= RULE_ID ) )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:211:1: (otherlv_1= RULE_ID )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:227:1: ( (otherlv_1= RULE_ID ) )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:228:1: (otherlv_1= RULE_ID )
             {
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:211:1: (otherlv_1= RULE_ID )
-            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:212:3: otherlv_1= RULE_ID
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:228:1: (otherlv_1= RULE_ID )
+            // ../org.xtext.example.index.greetings/src-gen/org/xtext/example/index/greetings/parser/antlr/internal/InternalGreetings.g:229:3: otherlv_1= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getRefGreetingRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRefGreeting469); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRefGreeting504); 
 
             		newLeafNode(otherlv_1, grammarAccess.getRefGreetingAccess().getGreetingHelloGreetingCrossReference_1_0()); 
             	
@@ -526,7 +571,7 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGreeting_in_ruleModel130 = new BitSet(new long[]{0x0000000000002802L});
+    public static final BitSet FOLLOW_ruleGreeting_in_ruleModel130 = new BitSet(new long[]{0x0000000000004802L});
     public static final BitSet FOLLOW_ruleGreeting_in_entryRuleGreeting166 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleGreeting176 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleHelloGreeting_in_ruleGreeting223 = new BitSet(new long[]{0x0000000000000002L});
@@ -534,11 +579,13 @@ public class InternalGreetingsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleHelloGreeting_in_entryRuleHelloGreeting285 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleHelloGreeting295 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_ruleHelloGreeting332 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleHelloGreeting349 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleHelloGreeting366 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRefGreeting_in_entryRuleRefGreeting402 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRefGreeting412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleRefGreeting449 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRefGreeting469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleHelloGreeting349 = new BitSet(new long[]{0x0000000000003000L});
+    public static final BitSet FOLLOW_12_in_ruleHelloGreeting367 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleHelloGreeting387 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_13_in_ruleHelloGreeting401 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRefGreeting_in_entryRuleRefGreeting437 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRefGreeting447 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleRefGreeting484 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRefGreeting504 = new BitSet(new long[]{0x0000000000000002L});
 
 }

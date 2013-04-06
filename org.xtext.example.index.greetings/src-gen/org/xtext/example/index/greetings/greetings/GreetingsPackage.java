@@ -123,13 +123,22 @@ public interface GreetingsPackage extends EPackage
   int HELLO_GREETING__NAME = GREETING_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Parent</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HELLO_GREETING__PARENT = GREETING_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Hello Greeting</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HELLO_GREETING_FEATURE_COUNT = GREETING_FEATURE_COUNT + 1;
+  int HELLO_GREETING_FEATURE_COUNT = GREETING_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.index.greetings.greetings.impl.RefGreetingImpl <em>Ref Greeting</em>}' class.
@@ -211,6 +220,17 @@ public interface GreetingsPackage extends EPackage
    * @generated
    */
   EAttribute getHelloGreeting_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.example.index.greetings.greetings.HelloGreeting#getParent <em>Parent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Parent</em>'.
+   * @see org.xtext.example.index.greetings.greetings.HelloGreeting#getParent()
+   * @see #getHelloGreeting()
+   * @generated
+   */
+  EReference getHelloGreeting_Parent();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.index.greetings.greetings.RefGreeting <em>Ref Greeting</em>}'.
@@ -301,6 +321,14 @@ public interface GreetingsPackage extends EPackage
      * @generated
      */
     EAttribute HELLO_GREETING__NAME = eINSTANCE.getHelloGreeting_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference HELLO_GREETING__PARENT = eINSTANCE.getHelloGreeting_Parent();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.index.greetings.greetings.impl.RefGreetingImpl <em>Ref Greeting</em>}' class.

@@ -178,9 +178,26 @@ ruleHelloGreeting returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='!' 
+)(	otherlv_2='extends' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getHelloGreetingAccess().getExtendsKeyword_2_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getHelloGreetingRule());
+	        }
+        }
+	otherlv_3=RULE_ID
+	{
+		newLeafNode(otherlv_3, grammarAccess.getHelloGreetingAccess().getParentHelloGreetingCrossReference_2_1_0()); 
+	}
+
+)
+))?	otherlv_4='!' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getHelloGreetingAccess().getExclamationMarkKeyword_3());
     }
 )
 ;
