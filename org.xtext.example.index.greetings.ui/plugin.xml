@@ -339,6 +339,17 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="org.xtext.example.index.greetings.ui.GreetingsExecutableExtensionFactory:org.xtext.example.index.greetings.ui.wizard.GreetingsNewProjectWizard"
+            id="org.xtext.example.index.greetings.ui.wizard.GreetingsNewProjectWizard"
+            name="Greetings Project"
+            project="true">
+      </wizard>
+   </extension>
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 

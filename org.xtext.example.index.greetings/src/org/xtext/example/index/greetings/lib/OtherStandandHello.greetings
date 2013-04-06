@@ -1,4 +1,4 @@
 // other default hello
 
-Hello OtherDefault!
-Hello OtherDefault2!
+Hello OtherDefault extends Default!
+Hello OtherDefault2 extends OtherDefault!

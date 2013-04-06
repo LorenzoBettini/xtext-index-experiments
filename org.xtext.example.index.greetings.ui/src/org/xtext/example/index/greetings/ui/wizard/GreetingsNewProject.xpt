@@ -1,0 +1,18 @@
+«IMPORT org::xtext::example::index::greetings::ui::wizard»
+
+«DEFINE main FOR GreetingsProjectInfo»
+«EXPAND model FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR GreetingsProjectInfo»
+«FILE "src/model/example.greetings"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+ref Default
+ref OtherDefault
+ref OtherDefault2
+«ENDFILE»
+«ENDDEFINE»
+
