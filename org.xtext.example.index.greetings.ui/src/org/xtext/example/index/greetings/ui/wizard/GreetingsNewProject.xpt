@@ -9,7 +9,8 @@
 /*
  * This is an example model
  */
-Hello Xtext!
+Hello Xtext extends Default!
+Hello Xtext2 extends OtherDefault!
 ref Default
 ref OtherDefault
 ref OtherDefault2
